@@ -1,16 +1,12 @@
 import React, { Component } from "react";
 
 class TodoInput extends Component {
-  state={
-    title:''
-  }
+
  
-  handleSubmit=()=>{
 
-    
-  }
+ 
   render() {
-
+      const {item,handleChange,handleSubmit}=this.props
     return (
       <div className="card card-body my-3">
         <form>
@@ -21,14 +17,14 @@ class TodoInput extends Component {
               </div>
             </div>
             <input
-           value={this.state.title}
-            onChange={(e)=>this.setState({title:e.target.value})}
+            value={item}
+            onChange={handleChange}
               type="text"
               className="form-control text-capitalize"
               placeholder="Add a todo item"
             />
           </div>
-          <button onClick={this.handleSubmit} type="button" class="btn btn-primary   btn-block mt-3 w-100">
+          <button onClick={handleSubmit} type="submit" class="btn btn-primary   btn-block mt-3 w-100">
             Add item
           </button>
         </form>
