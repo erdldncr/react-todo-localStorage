@@ -6,7 +6,7 @@ class TodoInput extends Component {
 
  
   render() {
-      const {item,handleChange,handleSubmit}=this.props
+      const {item,handleChange,handleSubmit,editItem}=this.props
     return (
       <div className="card card-body my-3">
         <form>
@@ -24,8 +24,10 @@ class TodoInput extends Component {
               placeholder="Add a todo item"
             />
           </div>
-          <button onClick={handleSubmit} type="submit" class="btn btn-primary   btn-block mt-3 w-100">
-            Add item
+          <button onClick={handleSubmit} type="submit" class={
+            !editItem? `btn btn-primary   btn-block mt-3 w-100`:`btn btn-success  btn-block mt-3 w-100`
+          }>
+           {!editItem?'Add':'Edit'} item
           </button>
         </form>
       </div>
